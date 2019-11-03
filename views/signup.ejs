@@ -1,0 +1,42 @@
+<% include ./include/header %>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <% if (message.length > 0) { %>
+                    <div class="alert alert-danger"><%= message %></div>
+                <% } %>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center" id="login">
+                <h1>Register</h1>
+                <hr style="width: 50%;">
+                <form action="/signup" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" placeholder="Username"  name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Password"  name="password">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-lg" id="btn">Register</button>
+
+                </form>
+
+                <hr style="width: 50%;">
+
+            <p><a href="/" class="btn btn-dark btn-lg"  id="btn"><b>BACK</b></a></p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <% include ./include/footer %>
+
+

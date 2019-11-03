@@ -1,0 +1,65 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    color: black;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+#btn{
+    border-radius: 0px;
+}
+#login{
+    margin-top: 50px;
+    background-color: #ffff00;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -moz-box-shadow: 10px 1px 15px rgba(68,68,68,0.6);
+	-webkit-box-shadow: 15px 15px 15px rgba(68,68,68,0.6);
+	box-shadow: 15px 15px 15px rgba(68,68,68,0.6);
+
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+    height: auto;
+    
+}
+
+
+.nav-link{
+    background-color: #ffff00;
+    padding: 5px;
+    margin-left: 10px;
+    color: black;
+}
+
+#add_cust{
+    padding-top: 50px;
+}
+
+#home{
+    margin-top: 50px;
+    background-color: #ffff00;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -moz-box-shadow: 10px 1px 15px rgba(68,68,68,0.6);
+	-webkit-box-shadow: 15px 15px 15px rgba(68,68,68,0.6);
+	box-shadow: 15px 15px 15px rgba(68,68,68,0.6);
+
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+    height: auto;
+    
+}
+
+#main{
+    width: 100%;
+    height: 100px;
+
+    
+}

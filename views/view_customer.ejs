@@ -1,0 +1,30 @@
+<% include ./include/header %>
+<% include ./include/nav %>
+
+<div class="container text-center">
+    <br>
+    <h1><u><b>VIEW CUSTOMERS</b></u></h1>
+    <br>
+    <div class="table-responsive text-center">
+        <table class="table table-dark table-bordered table-striped">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>CONTACT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+            <% customers.forEach(function(cust) { %>
+            <tr>
+                <td><%= cust.id %></td>
+                <td><%= cust.name %></td>
+                <td><%= cust.contact %></td>
+                <td><a class="btn btn-outline-info" id="btn" href="/edit_customer?id=<%= cust.id %>"><i class="fa fa-edit"></i></a></td>
+                <td><a class="btn btn-outline-danger" id="btn" href="/delete_customer?id=<%= cust.id %>" onClick="return confirm('Delete record ?')"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>
+</div>
+
+<% include ./include/footer %>

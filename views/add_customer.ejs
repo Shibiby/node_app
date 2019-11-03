@@ -1,0 +1,28 @@
+<% include ./include/header %>
+<% include ./include/nav %>
+
+<div class="container">
+    <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center" id="home">
+                <form method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>  
+                            <input class="form-control-md" type="text" name="name" id="name" value="<%= customer.name %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact</label>  
+                            <input class="form-control-md" type="tel" name="contact" value="<%= customer.contact %>" />
+                        </div>
+                        <button class="btn btn-dark text-center" id="btn">Save</button>
+                        <input type="hidden" value="<%= customer.id %>" />
+                    </form>
+    
+                <hr style="background-color: antiquewhite; width: 80px;">
+                <a class="btn btn-success" id="btn" href="/view_customer">Back</a>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+</div>
+
+<% include ./include/footer %>

@@ -66,6 +66,63 @@ module.exports = function(app, passport) {
     });
 
 
+    //show customers
+    app.get('/view_customer', function(req, res){
+        connection.query('SELECT * FROM customers', function(err, rs){
+            res.render('view_customer', { customers: rs});
+        });
+    });
+
+    //add customers
+    app.get('/add_customer', function(req, res, next){
+        res.render('add_customer', { 
+            message: req.flash('Customer Successfully Added'),
+            customer: {} });
+    });
+
+    app.post('/add_customer', function(req, res, next) {
+        connection.query('INSERT INTO customers SET ?', req.body, function(err, rs) {
+            res.redirect('/add_customer');
+        });
+    });
+
+    //delete customers
+    app.get('/delete_customer', function(req, res, next){
+        connection.query('DELETE FROM customers WHERE id = ?', req.query.id, function(err, rs){
+            res.redirect('/view_customer');
+        });
+    });
+
+    //edit customers
+    app.get('/edit_customer', function(req, res, next){
+        connection.query('SELECT * FROM customers WHERE id = ?', req.query.id, function(err, rs){
+            res.render('add_customer', {
+                customer: rs[0] });
+        });
+    });
+
+    app.post('/edit_customer', function(req, res, next){
+        var param = [
+            req.body,
+            req.query.id
+        ]
+        connection.query('UPDATE customers SET ? WHERE id = ?', param, function(err, rs){
+            res.redirect('view_customer');
+        });
+    });
+
+    //edit user
+    app.get('/profile', function(req, res, next){
+        connection.query('SELECT * FROM users WHERE id = ?', req.query.id, function(err, rs){
+            res.render('profile', {
+                user: rs[0]
+            });
+        });
+    });
+
+    app.post('profile')
+
+
 };
 
 function isLoggedIn(req,res,next){
